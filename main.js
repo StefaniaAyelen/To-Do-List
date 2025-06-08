@@ -83,7 +83,13 @@ function eliminarTarea(indice) {
 
 botonModo.addEventListener("click", function () {
     body.classList.toggle("modo-dia") // Agrega si la clase no esta y la saca si ya esta
-    
+
+    // Guardar el modo en localStorage
+    if (body.classList.contains("modo-dia")) {
+        localStorage.setItem("modo", "dia");
+    } else {
+        localStorage.setItem("modo", "noche");
+    }
 })
 
 
@@ -99,6 +105,12 @@ function init() {
         tareas = tareaGuardada 
 
         mostrarTareas(tareas)   
+    }
+
+     // Recuperar modo guardado
+    const modoGuardado = localStorage.getItem("modo");
+    if (modoGuardado === "dia") {
+    body.classList.add("modo-dia");
     }
 }
 
