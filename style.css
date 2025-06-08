@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+}
+
+.tachado {
+    text-decoration: line-through;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    flex-direction: column;  
+    gap: 20px;
+    background: linear-gradient(130deg, #5C2774 15%, #335CC5 65%, #637FFD 85% );
+}
+
+.contenedor-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.contenedor-tareas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    width: 100%; /* para que ocupe ancho completo si querés */
+    max-width: 400px; /* o el ancho que quieras */
+    border: 2px solid #7b8eb2;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-input h1 {
+    font-size: 60px;
+}
+
+#input {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #7b8eb2;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#input::placeholder{
+    color: azure;
+}
+
+#botonAgregar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #7b8eb2;
+    color: azure;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.contenedor-tareas button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #7b8eb2;
+    color: azure;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
