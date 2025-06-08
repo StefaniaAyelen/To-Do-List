@@ -35,8 +35,8 @@ body {
     align-items: center;
     list-style: none;
     gap: 10px;
-    width: 100%; /* para que ocupe ancho completo si querés */
-    max-width: 400px; /* o el ancho que quieras */
+    width: 100%;
+    max-width: 400px; 
     border: 2px solid #7b8eb2;
     border-radius: 10px;
     padding: 20px;
@@ -128,4 +128,64 @@ body {
 .lista-tareas span {
     max-width: 70%;
      overflow-wrap: break-word; /*Sirve para romper palabras largas y que continuen en la sig linea */
+}
+
+
+/* ----------------- ESTILADO MODO DIA ---------------- */
+
+body.modo-dia {
+    background: linear-gradient(90deg, #fce35a 0%, #F38181 50%, #fce35a 100%);
+    color: #000;
+}
+
+body.modo-dia .contenedor-input h1,
+body.modo-dia .contenedor-input h2 {
+    color: #333;
+}
+
+body.modo-dia #input {
+    background-color: rgba(255, 255, 240, 0.4);
+    border: 2px solid #f5c16c;
+    color: #6e5a44;
+}
+
+body.modo-dia #input::placeholder{
+    color: #bca97d;
+}
+
+body.modo-dia .contenedor-tareas {
+    background: linear-gradient(135deg, #fdd9a0 0%, #f8a5c2 100% );
+    border: 2px solid #f5c16c;
+}
+
+body.modo-dia #botonAgregar {
+    background: linear-gradient(135deg, #fdd9a0 0%, #f8a5c2 100%);
+    color: #000;
+    border: 2px solid #f5c16c;
+}
+
+body.modo-dia #botonAgregar:hover{
+    background: linear-gradient(100deg, #ffe39f 45%, #f7b5a0 95%, #fce3b3 120%);
+    color: #6e3f3f;
+    box-shadow: 0 0 8px rgba(243, 129, 129, 0.5);
+    transform: scale(1.03);
+}
+
+
+body.modo-dia .contenedor-tareas button {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+    border: 2px solid #f5c16c;
+}
+
+body.modo-dia .contenedor-tareas button:hover {
+    color: #d45500;
+    background: rgba(245, 193, 108, 0.3);
+    box-shadow: 0 0 8px rgba(245, 193, 108, 0.5);
+    transform: scale(1.03);
+}
+
+
+body.modo-dia .contenedor-tareas li {
+    color: #222;
 }
