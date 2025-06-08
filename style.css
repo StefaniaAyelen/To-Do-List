@@ -16,11 +16,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;     
-    flex-direction: column;  
+    flex-direction: column;
+    position: relative;
     gap: 20px;
     background: linear-gradient(90deg, #001f3f 0%, #000000 50%, #001f3f 100%);
 }
-
+/* -------------------------- CONTENEDOR INPUT --------------------------- */
 .contenedor-input {
     display: flex;
     flex-direction: column;
@@ -29,19 +30,6 @@ body {
     gap: 15px;
 }
 
-.contenedor-tareas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    gap: 10px;
-    width: 100%;
-    max-width: 400px; 
-    border: 2px solid #7b8eb2;
-    border-radius: 10px;
-    padding: 20px;
-    background: linear-gradient(100deg, #0f1e40 45%, #4a6fa5 95%, #a2d2ff 120%);
-}
 
 .contenedor-input h1 {
     font-size: 100px;
@@ -56,11 +44,11 @@ body {
     color: #eee;
 }
 
+/* ------------------------------- INPUT Y BOTON --------------------------------- */
+
 .input-y-boton {
     width: 70%;
 }
-
-
 
 #input {
     background-color: rgba(255, 255, 255, 0.1);
@@ -93,6 +81,21 @@ body {
     transform: scale(1.03);
 }
 
+/* --------------- CONTENEDOR TAREAS -------------------- */
+.contenedor-tareas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px; 
+    border: 2px solid #7b8eb2;
+    border-radius: 10px;
+    padding: 20px;
+    background: linear-gradient(100deg, #0f1e40 45%, #4a6fa5 95%, #a2d2ff 120%);
+}
+
 .contenedor-tareas button {
     background-color: rgba(255, 255, 255, 0.3);
     border: 2px solid #7b8eb2;
@@ -120,7 +123,7 @@ body {
     gap: 10px;
 }
 
-
+/* ------------------------------------------------------------ */
 .check-tarea {
     cursor: pointer;
 }
@@ -129,6 +132,31 @@ body {
     max-width: 70%;
      overflow-wrap: break-word; /*Sirve para romper palabras largas y que continuen en la sig linea */
 }
+
+/* --------------------------BOTON MODO---------------------------------- */
+.botonModo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#botonEstilo {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+}
+
+.botonModo:hover {
+    background-color: rgba(162, 210, 255, 0.1);
+    box-shadow: 0 0 8px rgba(162, 210, 255, 0.4);
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
 
 
 /* ----------------- ESTILADO MODO DIA ---------------- */
@@ -188,4 +216,14 @@ body.modo-dia .contenedor-tareas button:hover {
 
 body.modo-dia .contenedor-tareas li {
     color: #222;
+}
+
+body.modo-dia #botonEstilo {
+    color: #333;
+}
+
+body.modo-dia #botonEstilo:hover {
+    background-color: rgba(243, 129, 129, 0.1);
+    box-shadow: 0 0 8px rgba(243, 129, 129, 0.4);
+    color: #d45500;
 }
