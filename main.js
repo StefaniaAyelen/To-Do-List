@@ -11,7 +11,10 @@ let contenedorTareas = document.querySelector(".contenedor-tareas")
 botonAgregar.addEventListener("click", function(){
     let tarea = input.value;
     if (tarea != "") {
-        tareas.push(tarea)
+        tareas.push({
+            texto: tarea,
+            tachado: false
+        })
         mostrarTareas(tareas)
         console.log(tareas)
         input.value = "";
@@ -31,7 +34,7 @@ function mostrarTareas(tareas) {
     tareas.forEach((tarea, indice) => {
         variable += `
         <li class="lista-tareas">
-        <input type= "checkbox" class = "check-tarea"> <span>${tarea}</span>
+        <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> <span class = ${tarea.tachado ? 'tachado' : '' }>${tarea.texto}</span>
         <button onclick = "eliminarTarea(${indice})">
         Eliminar
         </button>
@@ -42,21 +45,25 @@ function mostrarTareas(tareas) {
     
     contenedorTareas.innerHTML = variable;
     
-    let checkBox = document.querySelectorAll(".check-tarea")
+    let checkBox = document.querySelectorAll(".check-tarea") // se convierte en una lista al seleccionar todos los checkbox
 
-    checkBox.forEach(check => {
+    checkBox.forEach((check, indice) => { // recorro la lista de checkbox y les agrego el evento
 
         check.addEventListener("change", function() { // se usa change cuando se cambie el estado
             let span = check.nextElementSibling; // Selecciona el hermano del checkbox en este caso el <span>
         
-            if (check.checked == true) {
-                span.classList.add("tachado")
+            if (check.checked) { //Si el checkbox esta modo check entonces
+                span.classList.add("tachado") //agrego la clase a span
+                tareas[indice].tachado = true; //accede al objeto de la tarea actual y cambia el estado de tachado
             }else{
                 span.classList.remove("tachado")
+                tareas[indice].tachado = false;
             }
-            
+
+        localStorage.setItem("tareas", JSON.stringify(tareas));
     })
     })
+
 
 }
 
