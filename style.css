@@ -18,7 +18,7 @@ body {
     align-items: center;     
     flex-direction: column;  
     gap: 20px;
-    background: linear-gradient(130deg, #5C2774 15%, #335CC5 65%, #637FFD 85% );
+    background: linear-gradient(90deg, #001f3f 0%, #000000 50%, #001f3f 100%);
 }
 
 .contenedor-input {
@@ -40,63 +40,92 @@ body {
     border: 2px solid #7b8eb2;
     border-radius: 10px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(100deg, #0f1e40 45%, #4a6fa5 95%, #a2d2ff 120%);
 }
 
 .contenedor-input h1 {
-    font-size: 60px;
-    font-family: Wezer;
-    color: #E6E6FA;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 100px;
+    font-family: Lucidity;
+    color: #eee;
+    
 }
 
 .contenedor-input h2 {
     font-size: 30px;
-    font-family: Wezer;
-    color: #E6E6FA;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: Mulish;
+    color: #eee;
 }
 
+.input-y-boton {
+    width: 70%;
+}
+
+
+
 #input {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid #7b8eb2;
     border-radius: 5px;
     padding: 3px;
-    color: azure;
+    color: #999999;
+    width: 70%;
 }
 
 #input::placeholder{
-    color: azure;
+    color: #999999;
 }
 
 #botonAgregar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(100deg, #0f1e40 45%, #4a6fa5 95%, #a2d2ff 120%);
+    font-family: Montserrat;
     border: 2px solid #7b8eb2;
     color: azure;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#botonAgregar:hover {
+    background: linear-gradient(100deg, #a2d2ff 45%, #4a6fa5 95%, #0f1e40 120%);
+    color: #0f1e40;
+    box-shadow: 0 0 8px rgba(162, 210, 255, 0.5);
+    transform: scale(1.03);
 }
 
 .contenedor-tareas button {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
     border: 2px solid #7b8eb2;
     color: azure;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contenedor-tareas button:hover {
+    color: #0f1e40;
+    box-shadow: 0 0 8px rgba(162, 210, 255, 0.5);
+    transform: scale(1.03);
 }
 
 .contenedor-tareas li {
     color: #E6E6FA;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 50%;
+    font-family: Montserrat;
+    font-size: 15px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 
 .check-tarea {
     cursor: pointer;
+}
+
+.lista-tareas span {
+    max-width: 70%;
+     overflow-wrap: break-word; /*Sirve para romper palabras largas y que continuen en la sig linea */
 }
