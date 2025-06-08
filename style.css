@@ -4,6 +4,7 @@
 
 .tachado {
     text-decoration: line-through;
+    color: #999999;
 }
 
 body, html {
@@ -31,7 +32,6 @@ body {
 .contenedor-tareas {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     list-style: none;
     gap: 10px;
@@ -45,6 +45,16 @@ body {
 
 .contenedor-input h1 {
     font-size: 60px;
+    font-family: Wezer;
+    color: #E6E6FA;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.contenedor-input h2 {
+    font-size: 30px;
+    font-family: Wezer;
+    color: #E6E6FA;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 #input {
@@ -52,6 +62,7 @@ body {
     border: 2px solid #7b8eb2;
     border-radius: 5px;
     padding: 3px;
+    color: azure;
 }
 
 #input::placeholder{
@@ -76,3 +87,16 @@ body {
     cursor: pointer;
 }
 
+.contenedor-tareas li {
+    color: #E6E6FA;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.check-tarea {
+    cursor: pointer;
+}
