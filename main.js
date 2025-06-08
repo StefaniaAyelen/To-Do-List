@@ -5,6 +5,8 @@ let tareas = []
 let input = document.getElementById("input")
 let botonAgregar = document.getElementById("botonAgregar")
 let contenedorTareas = document.querySelector(".contenedor-tareas")
+let botonModo = document.getElementById("botonEstilo")
+const body = document.body;
 
 /////////////////// AGREGAR //////////////////
 
@@ -76,6 +78,17 @@ function eliminarTarea(indice) {
     localStorage.setItem("tareas", JSON.stringify(tareas))
 }
 
+
+///////////// CAMBIAR MODO ESTILADO ///////////////////
+
+botonModo.addEventListener("click", function () {
+    body.classList.toggle("modo-dia") // Agrega si la clase no esta y la saca si ya esta
+    
+})
+
+
+
+////////////////// FUNCION INIT /////////////////////
 
 function init() {
     mostrarTareas(tareas)
