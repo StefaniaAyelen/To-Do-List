@@ -3,8 +3,6 @@
 Una aplicación web simple e intuitiva para gestionar tareas diarias. Los usuarios pueden agregar, tachar y eliminar tareas, con almacenamiento en el navegador mediante `localStorage`. También incluye un botón para alternar entre modo claro y oscuro.
 
 ## 📸 Vista previa
-
-![Captura de pantalla del proyecto]
 ![Modo Noche](img/modonoche.png)  
 ![Modo Día](img/mododia.png)
 
@@ -51,12 +49,6 @@ todo-list/
 
 - Las tareas se guardan en el navegador, por lo que no se pierden al cerrar o recargar la página.
 - El cambio de modo (claro/oscuro) se aplica mediante la clase `.modo-dia` al `<body>`.
-
----
-
-## 📄 Licencia
-
-Este proyecto es de uso libre para fines educativos o personales. Si lo vas a reutilizar públicamente, te agradecería que menciones al autor original. 😊
 
 ---
 
