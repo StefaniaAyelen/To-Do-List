@@ -36,7 +36,7 @@ function mostrarTareas(tareas) {
         <li class="lista-tareas">
         <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> <span class = ${tarea.tachado ? 'tachado' : '' }>${tarea.texto}</span>
         <button onclick = "eliminarTarea(${indice})">
-        Eliminar
+        <i class="fa-solid fa-trash" style= "font-size: 20px;"></i>
         </button>
         </li>
         `   
