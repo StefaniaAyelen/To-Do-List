@@ -7,6 +7,7 @@ let botonAgregar = document.getElementById("botonAgregar")
 let contenedorTareas = document.querySelector(".contenedor-tareas")
 let botonModo = document.getElementById("botonEstilo")
 const body = document.body;
+let fecha = document.getElementById("fechaLimite")
 
 /////////////////// AGREGAR //////////////////
 
@@ -15,7 +16,8 @@ botonAgregar.addEventListener("click", function(){
     if (tarea != "") {
         tareas.push({
             texto: tarea,
-            tachado: false
+            tachado: false,
+            fechaLimite: fecha.value,
         })
         mostrarTareas(tareas)
         console.log(tareas)
@@ -41,6 +43,7 @@ function mostrarTareas(tareas) {
         htmlTareas += `
         <li class="lista-tareas">
         <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> <span class = ${tarea.tachado ? 'tachado' : '' }>${tarea.texto}</span>
+        ${mostrarFecha(tarea.fechaLimite)}
         <button onclick = "eliminarTarea(${indice})">
         <i class="fa-solid fa-trash" style= "font-size: 20px;"></i>
         </button>
@@ -49,12 +52,14 @@ function mostrarTareas(tareas) {
     });
         
     contenedorTareas.innerHTML = htmlTareas;
-    chekTarea()
+    checkTarea()
 
 
 }
 
-function chekTarea(){
+
+//////////////// TACHAR TAREAS ////////////////
+function checkTarea(){
     
     let checkBox = document.querySelectorAll(".check-tarea") // se convierte en una lista al seleccionar todos los checkbox
 
@@ -98,6 +103,32 @@ botonModo.addEventListener("click", function () {
         localStorage.setItem("modo", "noche");
     }
 })
+
+
+
+///////////// MOSTRAR FECHA LIMITE ///////////////////
+
+function mostrarFecha(fechaLimite) {
+    let fechaHtml;
+
+    if (fechaLimite != "") {
+        fechaHtml = `<p class="fecha-limite">Fecha límite: ${fechaLimite}</p>`
+    }else{
+        fechaHtml = ""
+    }
+    
+    return fechaHtml
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
