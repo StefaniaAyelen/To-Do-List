@@ -31,10 +31,14 @@ botonAgregar.addEventListener("click", function(){
 //////////////// MOSTRAR TAREAS ////////////////
 
 function mostrarTareas(tareas) {
-    let variable = ""
-    
+    let htmlTareas = ""
+    if (tareas.length === 0) {
+        contenedorTareas.innerHTML = '<p class="sinTareas">No hay tareas</p>';
+        return
+    }
+
     tareas.forEach((tarea, indice) => {
-        variable += `
+        htmlTareas += `
         <li class="lista-tareas">
         <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> <span class = ${tarea.tachado ? 'tachado' : '' }>${tarea.texto}</span>
         <button onclick = "eliminarTarea(${indice})">
@@ -43,9 +47,14 @@ function mostrarTareas(tareas) {
         </li>
         `   
     });
-    
-    
-    contenedorTareas.innerHTML = variable;
+        
+    contenedorTareas.innerHTML = htmlTareas;
+    chekTarea()
+
+
+}
+
+function chekTarea(){
     
     let checkBox = document.querySelectorAll(".check-tarea") // se convierte en una lista al seleccionar todos los checkbox
 
@@ -65,8 +74,6 @@ function mostrarTareas(tareas) {
         localStorage.setItem("tareas", JSON.stringify(tareas));
     })
     })
-
-
 }
 
 /////////////// ELIMINAR TAREA /////////////////
