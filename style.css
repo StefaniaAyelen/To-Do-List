@@ -157,6 +157,13 @@ body {
     color: #ffffff;
 }
 
+/* ----------------- TEXTO SIN TAREAS ---------------- */
+.sinTareas {
+    color: #E6E6FA;
+    font-family: Montserrat;
+    font-size: 15px;
+}
+
 
 
 /* ----------------- ESTILADO MODO DIA ---------------- */
@@ -226,4 +233,8 @@ body.modo-dia #botonEstilo:hover {
     background-color: rgba(243, 129, 129, 0.1);
     box-shadow: 0 0 8px rgba(243, 129, 129, 0.4);
     color: #d45500;
+}
+
+body.modo-dia .sinTareas {
+    color: #333;
 }
