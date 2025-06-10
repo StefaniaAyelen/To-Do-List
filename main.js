@@ -134,7 +134,7 @@ function mostrarFecha(fechaLimite) {
 
 function fechaVencida(fechaLimite){
     let fechaDate = new Date(fechaLimite)
-    let fechaActual = new Date()
+    const fechaActual = new Date()
     let bandera = false;
 
         if (fechaDate < fechaActual) {
@@ -144,7 +144,33 @@ function fechaVencida(fechaLimite){
     return bandera
 }
 
+///////////// BLOQUEAR FECHAS PASADAS ///////////////////
 
+function bloquearFechasPasadas() {
+
+    const fechaActual = new Date()
+
+    const año = fechaActual.getFullYear();
+    let mes = fechaActual.getMonth() + 1;   // devuelve el mes, 0 = enero, por eso sumamos 1
+    let dia = fechaActual.getDate();
+
+    if (mes < 10) {
+    mes = "0" + mes;
+    }else {
+        mes = mes.toString();
+}
+
+    if (dia < 10) {
+        dia = "0" + dia;
+    }else {
+        dia = dia.toString();
+    }
+
+const fechaFormateada = `${año}-${mes}-${dia}`;
+
+fecha.min = fechaFormateada
+
+}
 
 
 ////////////////// FUNCION INIT /////////////////////
@@ -165,6 +191,9 @@ function init() {
     if (modoGuardado === "dia") {
     body.classList.add("modo-dia");
     }
+
+    bloquearFechasPasadas()
+
 }
 
 init();
