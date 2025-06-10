@@ -40,9 +40,20 @@ function mostrarTareas(tareas) {
     }
 
     tareas.forEach((tarea, indice) => {
+
+        const vencida = fechaVencida(tarea.fechaLimite); //Llamamos a la funcion
+
+        let clases = []; // Creo un array vacion donde se van a guardar los nombres de las clases
+        if (tarea.tachado) clases.push("tachado");// Pusheo las clases si da true
+        if (vencida) clases.push("vencida");
+
+        const clasesSpan = clases.join(" ");//Convertimos el array en una cadena de texto y separamos cada clase con un espacio
+
+
         htmlTareas += `
         <li class="lista-tareas">
-        <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> <span class = ${tarea.tachado ? 'tachado' : '' }>${tarea.texto}</span>
+        <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> 
+        <span class ="${clasesSpan}">${tarea.texto}</span>
         ${mostrarFecha(tarea.fechaLimite)}
         <button onclick = "eliminarTarea(${indice})">
         <i class="fa-solid fa-trash" style= "font-size: 20px;"></i>
@@ -117,17 +128,21 @@ function mostrarFecha(fechaLimite) {
         fechaHtml = ""
     }
     
+
     return fechaHtml
 }
 
+function fechaVencida(fechaLimite){
+    let fechaDate = new Date(fechaLimite)
+    let fechaActual = new Date()
+    let bandera = false;
 
+        if (fechaDate < fechaActual) {
+            bandera = true      
+    }
 
-
-
-
-
-
-
+    return bandera
+}
 
 
 
