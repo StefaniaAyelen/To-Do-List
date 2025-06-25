@@ -40,7 +40,6 @@ function mostrarTareas(tareas) {
     }
 
     tareas.forEach((tarea, indice) => {
-
         const vencida = fechaVencida(tarea.fechaLimite); //Llamamos a la funcion
 
         let clases = []; // Creo un array vacion donde se van a guardar los nombres de las clases
@@ -52,12 +51,12 @@ function mostrarTareas(tareas) {
 
         htmlTareas += `
         <li class="lista-tareas">
-        <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> 
-        <span class ="${clasesSpan}">${tarea.texto}</span>
-        ${mostrarFecha(tarea.fechaLimite)}
-        <button onclick = "eliminarTarea(${indice})">
-        <i class="fa-solid fa-trash" style= "font-size: 20px;"></i>
-        </button>
+            <input type= "checkbox" class = "check-tarea" ${tarea.tachado ? 'checked' : '' }> 
+            <span class ="${clasesSpan}">${tarea.texto}</span>
+            ${mostrarFecha(tarea.fechaLimite)}
+            <button onclick = "eliminarTarea(${indice})">
+            <i class="fa-solid fa-trash" style= "font-size: 20px;"></i>
+            </button>
         </li>
         `   
     });
@@ -128,7 +127,6 @@ function mostrarFecha(fechaLimite) {
         fechaHtml = ""
     }
     
-
     return fechaHtml
 }
 
@@ -137,8 +135,8 @@ function fechaVencida(fechaLimite){
     const fechaActual = new Date()
     let bandera = false;
 
-        if (fechaDate < fechaActual) {
-            bandera = true      
+    if (fechaDate < fechaActual) {
+        bandera = true
     }
 
     return bandera
@@ -147,7 +145,6 @@ function fechaVencida(fechaLimite){
 ///////////// BLOQUEAR FECHAS PASADAS ///////////////////
 
 function bloquearFechasPasadas() {
-
     const fechaActual = new Date()
 
     const año = fechaActual.getFullYear();
@@ -156,44 +153,39 @@ function bloquearFechasPasadas() {
 
     if (mes < 10) {
     mes = "0" + mes;
-    }else {
+    } else {
         mes = mes.toString();
-}
+    }
 
     if (dia < 10) {
         dia = "0" + dia;
-    }else {
+    } else {
         dia = dia.toString();
     }
 
 const fechaFormateada = `${año}-${mes}-${dia}`;
-
 fecha.min = fechaFormateada
-
 }
 
 
 ////////////////// FUNCION INIT /////////////////////
 
 function init() {
-    mostrarTareas(tareas)
+    mostrarTareas(tareas);
 
     const tareaGuardada = JSON.parse(localStorage.getItem("tareas")) 
     if (tareaGuardada) { 
-
-        tareas = tareaGuardada 
-
-        mostrarTareas(tareas)   
+        tareas = tareaGuardada;
+        mostrarTareas(tareas);
     }
 
      // Recuperar modo guardado
     const modoGuardado = localStorage.getItem("modo");
     if (modoGuardado === "dia") {
-    body.classList.add("modo-dia");
+        body.classList.add("modo-dia");
     }
 
     bloquearFechasPasadas()
-
 }
 
 init();
