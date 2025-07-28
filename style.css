@@ -289,3 +289,214 @@ body.modo-dia #fechaLimite::-webkit-calendar-picker-indicator {
 body.modo-dia .vencida {
     color: #b71c1c;
 }
+
+
+/* ====================== MEDIA QUERIES ====================== */
+
+@media (max-width: 1024px) {
+    .contenedor-input h1 {
+        font-size: 80px;
+    }
+    
+    .contenedor-input h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor-tareas {
+        max-width: 500px;
+        padding: 25px;
+    }
+    
+    #input {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .contenedor-input {
+        gap: 10px;
+    }
+    
+    .contenedor-input h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+    
+    .contenedor-input h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .input-y-boton {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    #input {
+        width: 60%;
+        min-width: 200px;
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    #botonAgregar {
+        padding: 8px 12px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    
+    #fechaLimite {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .contenedor-tareas {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    .contenedor-tareas li {
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .lista-tareas span {
+        max-width: 65%;
+    }
+    
+    .botonModo {
+        top: 15px;
+        right: 15px;
+    }
+    
+    #botonEstilo {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        gap: 10px;
+        padding: 15px;
+        min-height: 100vh;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 60px;
+    }
+    
+    .contenedor-input {
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .contenedor-input h1 {
+        font-size: 40px;
+        text-align: center;
+        line-height: 1.1;
+    }
+    
+    .contenedor-input h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .input-y-boton {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    #input {
+        width: 100%;
+        min-width: unset;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    #botonAgregar {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    #fechaLimite {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    .contenedor-tareas {
+        max-width: 100%;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    
+    .contenedor-tareas li {
+        font-size: 13px;
+        gap: 5px;
+        align-items: center;
+    }
+    
+    .lista-tareas span {
+        max-width: 60%;
+        font-size: 13px;
+    }
+    
+    .contenedor-tareas button {
+        padding: 8px 10px;
+        font-size: 12px;
+        min-width: 60px;
+    }
+    
+    .botonModo {
+        top: 10px;
+        right: 10px;
+    }
+    
+    #botonEstilo {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    .sinTareas {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px) {
+    .contenedor-input h1 {
+        font-size: 35px;
+    }
+    
+    .contenedor-input h2 {
+        font-size: 14px;
+    }
+    
+    .contenedor-tareas li {
+        font-size: 12px;
+    }
+    
+    .lista-tareas span {
+        font-size: 12px;
+        max-width: 55%;
+    }
+    
+    .contenedor-tareas button {
+        padding: 6px 8px;
+        font-size: 11px;
+        min-width: 50px;
+    }
+}
